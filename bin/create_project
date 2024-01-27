@@ -4,8 +4,10 @@ cd "$(dirname "$0")"
 cd ..
 
 mkdir $1
-ln -s n_env $1/n_env
-ln -s node_modules $1/node_modules
+cd $1
+ln -s ../n_env n_env
+ln -s ../node_modules node_modules
 
+cd ..
 cp -R tmpl/* $1/
 
