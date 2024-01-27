@@ -16,7 +16,6 @@ ln -s ../node_modules node_modules
 cd ..
 cp -R tmpl/* $1/
 
-echo -e "\n#Ignore $1\n$1" >> .gitignore
-
-
+echo -e "\n#custom $1\n" >> .gitignore
+find $1 -type l | sed -e s'/^\.\///g' >> .gitignore
 
