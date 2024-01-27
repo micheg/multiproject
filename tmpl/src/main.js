@@ -25,18 +25,12 @@ let config = {
     default: "arcade",
     arcade: {
       debug: false,
-      gravity: { y: 200 },
+      gravity: { y: 0 },
     },
   },
 };
 
 window.addEventListener("load", () => {
-  try {
-    window.screen.orientation.lock("landscape");
-    StatusBar.hide();
-  } catch (error) {
-    console.error(error);
-  }
 
   const ratio = window.innerWidth / window.innerHeight;
   const height = 580;
