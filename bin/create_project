@@ -3,6 +3,11 @@
 cd "$(dirname "$0")"
 cd ..
 
+if [ -d $1 ]; then
+  echo "Directory exists."
+  exit -1
+fi
+
 mkdir $1
 cd $1
 ln -s ../n_env n_env
@@ -10,4 +15,7 @@ ln -s ../node_modules node_modules
 
 cd ..
 cp -R tmpl/* $1/
+
+echo -e "\n#custom $1\n" >> .gitignore
+find $1 -type l | sed -e s'/^\.\///g' >> .gitignore
 
