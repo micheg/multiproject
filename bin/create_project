@@ -9,4 +9,3 @@ ln -s node_modules $1/node_modules
 
 cp -R tmpl/* $1/
 
-deactivate
