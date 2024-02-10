@@ -31,10 +31,9 @@ let config = {
 };
 
 window.addEventListener("load", () => {
-
   const ratio = window.innerWidth / window.innerHeight;
   const height = 580;
-  const width = height * ratio;
+  const width = Math.min(height * ratio, 1280);
 
   console.log(`${ratio} - ${width} - ${height}`);
   config.scale.width = width;

@@ -15,8 +15,9 @@ ln -s ../node_modules node_modules
 
 cd ..
 cp -R tmpl/* $1/
+cd $1
+mkdir public
+mkdir public/assets
+cd ..
 
 echo -e "\n#Ignore $1\n$1" >> .gitignore
-
-
-
